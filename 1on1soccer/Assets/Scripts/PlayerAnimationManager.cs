@@ -4,22 +4,21 @@ using System.Collections;
 public class PlayerAnimationManager : MonoBehaviour {
 
 	private Animator animator;
-	private InputState inputState;
-
+	private bool running;
 	// Use this for initialization
 	void Awake () {
-	
+		var running = false;
 		animator = GetComponent<Animator> ();
-		inputState = GetComponent<InputState> ();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	
-		var running = true;
 
-		if(inputState.absVelX > 0 && inputState.absVelY < inputState.standingThreshold){
-			running = false;
+
+		if (Input.GetKey(KeyCode.LeftArrow)||Input.GetKey(KeyCode.RightArrow)){
+			running = true;
 			animator.SetBool ("Running", running);
 		}
 
