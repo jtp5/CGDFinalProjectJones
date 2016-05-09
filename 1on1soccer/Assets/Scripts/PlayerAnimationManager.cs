@@ -17,12 +17,15 @@ public class PlayerAnimationManager : MonoBehaviour {
 	
 
 
-		if (Input.GetKey(KeyCode.LeftArrow)||Input.GetKey(KeyCode.RightArrow)){
+		if (Input.GetKey (KeyCode.LeftArrow) || Input.GetKey (KeyCode.RightArrow)) {
 			running = true;
-			animator.SetBool ("Running", running);
+		}
+		else 
+		{
+			running = false;
 		}
 
-		animator.SetBool ("Running", running);
+		animator.SetBool ("running", running);
 
 
 

@@ -39,12 +39,19 @@ public class InputState : MonoBehaviour {
 			running = true;
 			animator.SetBool ("Running", running);
 		}
-		
+
+
 		//animator.SetBool ("Running", running);
 
 
 		}
 
+	void FixedUpdate(){
+		absVelX = System.Math.Abs (body2d.velocity.x);
+		absVelY = System.Math.Abs (body2d.velocity.y);
+		
+		standing = absVelY <= standingThreshold;
+	}
 	
 
 }
