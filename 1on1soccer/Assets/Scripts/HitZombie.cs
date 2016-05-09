@@ -10,7 +10,11 @@ public class HitZombie : MonoBehaviour {
 		Debug.Log ("hit zombie");
 	
 		Rigidbody2D otherBody = other.GetComponent<Rigidbody2D> ();
-		otherBody.velocity = new Vector2 (-60, 50);
+
+		if (otherBody != null) {
+			otherBody.velocity = new Vector2 (-60, 50);
+
+		}
 
 	}
 	
