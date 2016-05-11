@@ -5,13 +5,17 @@ public class Jump2 : MonoBehaviour {
 	
 	public float jumpSpeed = 200f;
 	public float forwardSpeed = 0;
-	
+	public float myScaleX = -0.1f;
+	public float myScaleX2= 0.1f;
+	public float myScaleY = 0.1f;
+	public float myScaleZ = 1f;
 	private Rigidbody2D body2d;
 	private InputState inputState;
 	
 	void Awake(){
 		body2d = GetComponent<Rigidbody2D> ();
 		inputState = GetComponent<InputState> ();
+		transform.localScale = new Vector2(myScaleX2, myScaleY);
 	}
 	
 	// Update is called once per frame
@@ -28,10 +32,12 @@ public class Jump2 : MonoBehaviour {
 		if (inputState.left2)
 		{
 			body2d.velocity = new Vector2(-50, 0);
+			transform.localScale = new Vector2(myScaleX, myScaleY);
 		}
 		if (inputState.right2)
 		{
 			body2d.velocity = new Vector2(50, 0);
+			transform.localScale = new Vector2(myScaleX2, myScaleY);
 		}
 	}
 }

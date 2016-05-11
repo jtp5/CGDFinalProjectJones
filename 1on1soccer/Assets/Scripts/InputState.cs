@@ -41,7 +41,6 @@ public class InputState : MonoBehaviour {
 		}
 
 
-		//animator.SetBool ("Running", running);
 
 
 		}
