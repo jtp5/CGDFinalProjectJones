@@ -18,9 +18,7 @@ public class Jump : MonoBehaviour {
 		transform.localScale = new Vector2(myScaleX2, myScaleY);
 	}
 
-	void Start(){
 
-	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -43,5 +41,10 @@ public class Jump : MonoBehaviour {
 			body2d.velocity = new Vector2(50, 0);
 			transform.localScale = new Vector2(myScaleX, myScaleY);
 		}
+	}
+
+	public void MoveToStart()
+	{
+		body2d.position = new Vector2 (15f,-46.5f);
 	}
 }
