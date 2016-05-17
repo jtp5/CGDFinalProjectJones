@@ -1,30 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class TimeManager : MonoBehaviour {
 
-	public void ManipulateTime(float newTime, float duration){
+	public float startingTime;
 
-		if (Time.timeScale == 0)
-			Time.timeScale = 0.1f;
+	private Text theText;
 
-		StartCoroutine (FadeTo (newTime, duration));
+	// Use this for initialization
+	void Start () {
+	
+		theText = GetComponent<Text> ();
 	}
+	
+	// Update is called once per frame
+	void Update () {
+	
+		startingTime -= Time.deltaTime; 
 
-	IEnumerator FadeTo(float value, float time){
+		if (startingTime <= 0) {
 
-		for (float t = 0f; t < 1; t += Time.deltaTime / time) {
-
-			Time.timeScale = Mathf.Lerp(Time.timeScale, value, t);
-
-			if(Mathf.Abs(value - Time.timeScale) < .01f){
-				Time.timeScale = value;
-				return false;
-			}
-
-			yield return null;
 		}
 
+		theText.text = "" + Mathf.Round (startingTime);
 	}
-
 }
