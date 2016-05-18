@@ -22,22 +22,64 @@ public class Jump2 : MonoBehaviour {
 	void Update () {
 		
 		if (inputState.standing) {
-			if(inputState.actionButton2){
+			
+			
+			
+			
+			
+			if(inputState.actionButton2 && inputState.standing){
 				body2d.velocity = new Vector2(transform.position.x < 0 ? forwardSpeed : 0, jumpSpeed);
+				
+				
+				if (inputState.left2)
+				{
+					body2d.velocity = new Vector2(-50, 10);
+					transform.localScale = new Vector2(myScaleX, myScaleY);
+					
+					
+					
+				}
+				if (inputState.right2)
+				{
+					body2d.velocity = new Vector2(50, 10);
+					transform.localScale = new Vector2(myScaleX2, myScaleY);
+				}
+				
+				
 			}
-		}
-		
-		
-		
-		if (inputState.left2)
-		{
-			body2d.velocity = new Vector2(-50, 0);
-			transform.localScale = new Vector2(myScaleX, myScaleY);
-		}
-		if (inputState.right2)
-		{
-			body2d.velocity = new Vector2(50, 0);
-			transform.localScale = new Vector2(myScaleX2, myScaleY);
+			
+			
+			
+			
+			
+			
+			if (inputState.left2)
+			{
+				body2d.velocity = new Vector2(-50, 10);
+				transform.localScale = new Vector2(myScaleX, myScaleY);
+				
+				if(inputState.actionButton && inputState.standing){
+					body2d.velocity = new Vector2(transform.position.x < 0 ? forwardSpeed : 0, jumpSpeed);
+					
+					
+				}
+				
+				
+			}
+			
+			
+			if (inputState.right2)
+			{
+				body2d.velocity = new Vector2(50, 10);
+				transform.localScale = new Vector2(myScaleX2, myScaleY);
+			}
+			
+			Debug.Log(inputState.standing);
+			
+			
+			
+			
+			
 		}
 	}
 }

@@ -48,9 +48,12 @@ public class InputState : MonoBehaviour {
 	void FixedUpdate(){
 		absVelX = System.Math.Abs (body2d.velocity.x);
 		absVelY = System.Math.Abs (body2d.velocity.y);
-		
+
+
 		standing = absVelY <= standingThreshold;
 	}
-	
+
+
+
 
 }
