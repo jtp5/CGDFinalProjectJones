@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ScoreTeleport2 : MonoBehaviour {
 	
-	
+	public int scoreValue = 1;
 	private Jump GreenJump;
 	
 	public GameObject player1;
@@ -25,6 +25,7 @@ public class ScoreTeleport2 : MonoBehaviour {
 			player2.transform.position = new Vector3(-13.5f, -46.5f, -6);
 			player1.transform.localScale = new Vector2 (.1f,.1f);
 			player2.transform.localScale = new Vector2 (.1f,.1f);
+			ScoreManager2.score2 += scoreValue;
 		}
 		
 		
