@@ -3,13 +3,17 @@ using System.Collections;
 
 public class PixelPerfectCamera : MonoBehaviour {
 
-	public static float pixelsToUnits = 1f;
-	public static float scale = 1f;
+	public static float pixelsToUnits;
+	public static float scale;
 
 	public Vector2 nativeResolution = new Vector2 (400, 160
 	                                               );
 
-	void Awake () {
+	void Start () {
+
+		pixelsToUnits = 1f;
+		scale = 1f;
+
 		var camera = GetComponent<Camera> ();
 
 		if (camera.orthographic) {
