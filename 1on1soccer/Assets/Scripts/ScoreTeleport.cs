@@ -9,8 +9,11 @@ public class ScoreTeleport : MonoBehaviour {
 	public GameObject player1;
 	public GameObject player2;
 
-	void Awake(){
+	private AudioSource source;
+	public AudioClip goal;
 
+	void Awake(){
+		source = GetComponent<AudioSource> ();
 		GreenJump = GetComponent<Jump> ();
 
 
@@ -26,6 +29,7 @@ public class ScoreTeleport : MonoBehaviour {
 			player1.transform.localScale = new Vector2 (.1f,.1f);
 			player2.transform.localScale = new Vector2 (.1f,.1f);
 			ScoreManager.score += scoreValue;
+			source.PlayOneShot(goal, .25f);
 		}
 
 

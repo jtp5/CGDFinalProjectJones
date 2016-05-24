@@ -9,9 +9,6 @@ public class TimeManager : MonoBehaviour {
 
 	private Text theText;
 
-
-
-
 	// Use this for initialization
 	void Start () {
 	
